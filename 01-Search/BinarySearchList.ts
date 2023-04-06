@@ -23,4 +23,4 @@ function binarySearch(arr: number[], target: number): number | null {
   const target = 5;
   const result = binarySearch(arr, target);
   
-  console.log(result); // outputs 2
+  console.log(result);

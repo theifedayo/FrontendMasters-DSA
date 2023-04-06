@@ -1,11 +1,11 @@
 
 
-export default function linear_search(haystack: number[], needle: number): boolean {
+function linear_search(haystack: number[], needle: number): number | null {
     for(let i = 0; i < haystack.length; i++){
         if(haystack[i] ===  needle){
-            return true;
+            return i;
         }
     }
-    return false;
+    return null;
 
 }
