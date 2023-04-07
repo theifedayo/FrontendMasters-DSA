@@ -1,26 +1,32 @@
 
 
+// Define a function named binarySearch which accepts two parameters
+// An array of numbers 'arr' and a target number 'target'
+// The function returns either the index of target in the array or null if not found
 function binarySearch(arr: number[], target: number): number | null {
-    let left = 0;
-    let right = arr.length - 1;
+    let lo = 0;
+    let hi = arr.length;
   
-    while (left <= right) {
-      const mid = Math.floor((left + right) / 2);
-  
-      if (arr[mid] === target) {
-        return mid;
-      } else if (arr[mid] < target) {
-        left = mid + 1;
-      } else {
-        right = mid - 1;
-      }
-    }
-  
-    return null;
+    do{
+
+        let  m = Math.floor(lo + (hi-lo)/2);
+        let v = arr[m];
+
+        if(v === target){
+            return m;
+        }else if(v > target){
+            hi = m;
+        }else {
+            lo = m + 1
+        }
+
+       }while(lo < hi);
+    
+       return null;
   }
   
-  const arr = [1, 3, 5, 7, 9];
-  const target = 5;
+  const arr = [1, 9, 10, 13, 21];
+  const target = 21;
   const result = binarySearch(arr, target);
   
   console.log(result);
